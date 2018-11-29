@@ -3,7 +3,9 @@
     <header>
       <a href="">
         <!-- todo: dummyを動的に変更する -->
-        <img src="/dummy.jpg" alt="" class="hero-img">
+        <div class="img-container">
+          <img :src="post.heroImg.url" alt="" class="hero-img">
+        </div>
       </a>
       <div class="post-wrapper">
         <a href="" class="post-title">
@@ -32,9 +34,15 @@ export default {
     width: 100%;
   }
 
+  .img-container {
+    width: 100%;
+    height: 180px;
+  }
+
   .hero-img {
     width: 100%;
     height: auto;
+    max-height: 100%;
     margin-bottom: 25px;
     filter: grayscale(100%);
     transition: .3s ease-in-out;
