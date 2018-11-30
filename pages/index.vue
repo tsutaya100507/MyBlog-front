@@ -7,7 +7,7 @@
       </transition>
     </div>
     <div class="cards-wrapper">
-        <PostCard :post="post" v-for="post in posts" :key=post.id class="post-card"/>
+      <PostCard :post="post" v-for="post in posts" :key=post.id class="post-card"/>
     </div>
   </div>
 </template>
@@ -105,6 +105,22 @@
     opacity: 0;
   }
 
+  .slide-left-enter {
+    transform: translateX(2000px);
+    opacity: 0;
+  }
+
+  .slide-left-enter-active {
+    transition: all .3s linear;
+  }
+
+  .slide-left-leave-to {
+    transform: translateX(-2000px);
+    opacity: 0;
+  }
   
+  .slide-left-leave-active {
+    transition: all .3s linear;
+  }
 
 </style>
