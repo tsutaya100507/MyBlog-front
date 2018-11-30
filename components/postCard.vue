@@ -1,12 +1,11 @@
 <template>
   <article>
     <header>
-      <a href="">
-        <!-- todo: dummyを動的に変更する -->
+      <nuxt-link :to="{ name: 'blogs-slug', params: {slug: post.slug} }">
         <div class="img-container">
           <img :src="post.heroImg.url" alt="" class="hero-img">
         </div>
-      </a>
+      </nuxt-link>
       <div class="post-wrapper">
         <a href="" class="post-title">
           <h1>{{ post.title }}</h1>
@@ -20,6 +19,8 @@
 
 <script>
 export default {
+    transition: 'slide-left',
+
     props: [ 'post' ]
 }
 </script>

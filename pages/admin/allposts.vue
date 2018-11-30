@@ -16,18 +16,14 @@
             <th class="table-action">delete</th>
           </tr>
           </thead>
-        <!-- <div :post="post" v-for="post in posts" :key=post.name class="post"> -->
           <tbody>
           <tr :post="post" v-for="post in posts" :key=post.id class="post">
-          <!-- <nuxt-link to="/"> -->
             <td><img :src="post.heroImg.url" alt="aaa"></td>
             <td class="table-title">{{ post.title }}</td>
-            <!-- <td class="table-body">{{ post.body }}</td> -->
             <td class="table-category">category</td>
             <td class="table-published">pablished</td>
             <td class="table-data">{{ post.created_at }}</td>
             <td class="table-action" @click="deletePost(post.id)">delete</td>
-          <!-- </nuxt-link> -->
           </tr>
           </tbody>
         </table>
