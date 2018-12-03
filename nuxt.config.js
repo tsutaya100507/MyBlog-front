@@ -51,6 +51,9 @@ module.exports = {
     // // host: 'https://my-blog-portfolio.herokuapp.com',
     // port: 8000,
     // prefix: '/api'
-  }
+  },
+  router: {
+    middleware: 'auth'
+  },
 }
 
