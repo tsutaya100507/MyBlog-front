@@ -1,12 +1,20 @@
 <template>
-  <div class="container">
-    <form @submit.prevent="login">
-      <p class="error" v-if="formError">{{ formError }}</p>
-      <p>name:<input type="text" v-model="formUsername" name="username"/></p>
-      <p>password:<input type="text" v-model="formPassword" name="password"></p>
-      <button type="submit">login</button>
-    </form>
-  </div>
+  <v-layout>
+    <v-flex>
+      <v-card>
+        <v-card-text>
+          <v-form @submit.prevent="login">
+            <p class="error" v-if="formError">{{ formError }}</p>
+            <v-text-field type="text" v-model="formUsername" name="username" label="username" />
+            <v-text-field type="text" v-model="formPassword" name="password" label="password" />
+            <v-card-actions>
+              <v-btn type="submit">login</v-btn>
+            </v-card-actions>
+          </v-form>
+        </v-card-text>
+      </v-card>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -25,7 +33,7 @@ export default {
           username: this.formUsername,
           password: this.formPassword
         })
-        this.$router.push('/')
+        this.$router.push('/admin')
       } catch(e) {
         this.formError = e.messae
       }
