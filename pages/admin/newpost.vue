@@ -8,15 +8,22 @@
           <v-text-field
             v-model="slug"
             :rules="slugRules"
-            :counter="10"
+            :counter="20"
             label="Slug"
             required
           ></v-text-field>
           <v-text-field
             v-model="title"
             :rules="titleRules"
-            :counter="10"
+            :counter="50"
             label="Title"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="tags"
+            :rules="titleRules"
+            :counter="15"
+            label="Tags"
             required
           ></v-text-field>
 
@@ -75,12 +82,12 @@
         slug: '',
         slugRules: [
           v => !!v || 'slug is required',
-          v => (v && v.length <= 10) || 'slug must be less than 10 characters'
+          v => (v && v.length <= 20) || 'slug must be less than 10 characters'
         ],
         title: '',
         titleRules: [
           v => !!v || 'title is required',
-          v => (v && v.length <= 10) || 'title must be less than 10 characters'
+          v => (v && v.length <= 50) || 'title must be less than 10 characters'
         ],
         imageName: '',
 		    imageUrl: '',
@@ -89,6 +96,7 @@
         bodyRules: [
           v => !!v || 'body is required',
         ],
+        tags: [],
         processing: false,
       }
     },
@@ -100,17 +108,19 @@
           await this.$axios.$post(`${process.env.apiBaseUrl}/v1/blogs`, {
             slug: this.slug,
             title: this.title,
+            tags: this.tags,
             body: this.value,
-            // heroImg: this.imageName,
-            // heroImg: this.imageFile,
+            heroImg: this.imageName,
+            heroImg: this.imageFile,
             heroImg: this.imageUrl,
           }).then((response) => {
-          this.slug = ""
-          this.title = ""
-          this.value = ""
+          this.slug      = ""
+          this.title     = ""
+          this.value     = ""
           this.imageName = ""
           this.imageFile = ""
-          this.imageUrl = ""
+          this.imageUrl  = ""
+          this.tags      = ""
         })
           window.location.href = '/admin/allposts'
         }
