@@ -5,6 +5,7 @@
       <h1>profile</h1>
     </header>
     <div class="wrapper">
+      <button @click="secured">secured</button>
     <div class="intro-card">
       <div class="name">Tatsuya Ichikawa</div>
       <div class="job">Engineer</div>
@@ -40,6 +41,13 @@ export default {
         { name: "React", term: "2month", description: "流行りと名前の格好良さに飛びついて２度挫折しましたが、勉強会等を通してreduxなどの全体のイメージがついたので今度こそ習得したいと思っています。"},
         { name: "Docker", term: "3month", description: "このブログの開発環境はDockerを使って構築しています。フロント、api、DBの各コンテナをdocker-composeで管理しています。まだまだ勉強が足りませんが、今後はkubernetes等にも手を出すつもりです。"},
       ]
+    }
+  },
+  methods: {
+    async secured() {
+      console.log(this.$auth0.getIdToken())
+      const ret = await this.$axios.$get(`${process.env.apiBaseUrl}/v1/secured`, { headers: { Authorization: 'Bearer' + this.$auth0.getIdToken() }})
+      console.log(this.$auth0.getIdToken())
     }
   }
 }
