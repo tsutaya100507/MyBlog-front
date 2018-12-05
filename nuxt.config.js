@@ -17,6 +17,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Varela+Round' }
     ]
   },
+  mode: 'spa',
   /*
   ** Customize the progress bar color
   */
@@ -39,7 +40,11 @@ module.exports = {
       }
     }
   },
-  plugins: [ {src: '~/plugins/mavoneditor.js'} ],
+  plugins: [ {src: '~/plugins/mavoneditor.js'}, '~/plugins/auth0.js' ],
+  auth0: {
+    clientID: 'CwoPRZimptIe2nb5mw1zpIvMYKBC5wQ9',
+    domain: 'tatsuya-ichikawa.auth0.com',
+  },
   modules: [
     '@nuxtjs/vuetify',
     '@nuxtjs/axios',
