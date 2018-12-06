@@ -25,11 +25,17 @@
       </div>
     </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from '~/components/shared/layouts/footer.vue'
+
 export default {
+  components: {
+    Footer,
+  },
   data() {
     return {
       skills: [
@@ -53,9 +59,6 @@ export default {
   }
 
   header > a {
-    /* position: absolute;
-    top: 35px;
-    left: 20px; */
     font-size: 15px;
     color: black;
   }
@@ -66,27 +69,26 @@ export default {
   text-decoration: none;
   transition: color .5s;
 }
-header > a:hover {
-  color: #1F7392;
+  header > a:hover {
+    color: #1F7392;
+  }
 
-}
-
-header > a::after {
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: #1F7392;
-  transform: scale(0, 1);
-  transform-origin: left top;
-  transition: transform .3s;
-  color: #1F7392;
-}
-header > a:hover::after {
-  transform: scale(1, 1);
-}
+  header > a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #1F7392;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+    color: #1F7392;
+  }
+  header > a:hover::after {
+    transform: scale(1, 1);
+  }
 
   header > h1 {
     text-align: center;
@@ -128,7 +130,6 @@ header > a:hover::after {
   .skill-wrapper {
     display: flex;
     justify-content: center;
-    /* justify-content: space-between; */
     flex-wrap: wrap;
   }
 

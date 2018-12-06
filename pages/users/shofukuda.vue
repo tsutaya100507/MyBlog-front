@@ -24,11 +24,17 @@
       </div>
     </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
+import Footer from '~/components/shared/layouts/footer.vue'
+
 export default {
+  components: {
+    Footer,
+  },
   data() {
     return {
       user: {
@@ -49,10 +55,6 @@ export default {
 </script>
 
 <style scoped>
-  .page-wrapper {
-    padding-bottom: 50px;
-  }
-
   header {
     position: relative;
     padding: 20px;
@@ -60,9 +62,6 @@ export default {
   }
 
   header > a {
-    /* position: absolute;
-    top: 35px;
-    left: 20px; */
     font-size: 15px;
     color: black;
   }
@@ -73,27 +72,27 @@ export default {
   text-decoration: none;
   transition: color .5s;
 }
-header > a:hover {
-  color: #1F7392;
+  header > a:hover {
+    color: #1F7392;
 
-}
+  }
 
-header > a::after {
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: #1F7392;
-  transform: scale(0, 1);
-  transform-origin: left top;
-  transition: transform .3s;
-  color: #1F7392;
-}
-header > a:hover::after {
-  transform: scale(1, 1);
-}
+  header > a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #1F7392;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+    color: #1F7392;
+  }
+  header > a:hover::after {
+    transform: scale(1, 1);
+  }
 
   header > h1 {
     text-align: center;

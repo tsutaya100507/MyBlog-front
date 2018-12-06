@@ -8,6 +8,7 @@
   footer {
     position: relative;
     height: 50px;
+    margin-top: 50px;
     border-top: 1px solid #158A8A;
     text-align: center;
   }

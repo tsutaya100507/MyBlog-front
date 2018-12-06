@@ -17,15 +17,18 @@
     <div class="cards-wrapper">
       <PostCard :post="post" v-for="post in posts" :key=post.id class="post-card"/>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
   import PostCard from "~/components/postCard.vue";
+  import Footer from '~/components/shared/layouts/footer.vue'
 
   export default {
     components: {
       PostCard,
+      Footer,
     },
     data () {
       return {
@@ -48,7 +51,6 @@
     position: relative;
     text-align: center;
     background-color: #F9F9F9;
-    padding-bottom: 50px;
   }
 
   .logo {
