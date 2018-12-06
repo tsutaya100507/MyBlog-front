@@ -2,8 +2,6 @@
   <div class="wrapper">
     <div class="logo">
       <div class="first-view">
-        <div class="title-first"></div>
-        <div class="title-second"></div>
         <h1>バグ。。。時々涙目</h1>
       </div>
       <!-- <img src="/logo_transparent.png" alt="Tatsuya_Ichikawa"/> -->
@@ -45,6 +43,7 @@
     position: relative;
     text-align: center;
     background-color: #F9F9F9;
+    padding-bottom: 50px;
   }
 
   .logo {
@@ -55,61 +54,21 @@
   .first-view {
     position: relative;
     margin: 0 auto;
-    width: 1280px;
-    height: 500px;
-  }
-
-  .title-first {
-
-  }
-
-  .title-first::after {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    /* padding-left: 60px; */
-    text-align: left;
-    font-size: 200px;
-    font-weight: 900;
-    color: #F2F2F2;
-    content: 'バグ。。。';
-    overflow: hidden;
     width: 100%;
-    word-break: keep-all;
-  }
-
-  .title-second::after {
-    position: absolute;
-    top: 250px;
-    /* left: 600px; */
-    right: 30px;
-    /* padding-right: 60px; */
-    text-align: right;
-    font-size: 200px;
-    font-weight: 900;
-    color: #F2F2F2;
-    content: '時々涙目';
-    word-break: keep-all;
+    background-image: url('/bug.png');
+    background-size: contain;
+    background-position: center;
+    height: 100%;
   }
 
   h1 {
     position: absolute;
     top: 320px;
     text-align: left;
-    font-size: 50px;
+    font-size: 0;
     margin-left: 50px;
     width: 100%;
     padding-left: 20px;
-  }
-
-  h1::after {
-    position: absolute;
-    width:100%;
-    height:4px;
-    left: 0;
-    bottom: -10px;
-    background: linear-gradient(to right, #7ED1E6, rgba(255,255,255,0) 100%);
-    content: "";
   }
 
   .profile {
@@ -151,7 +110,7 @@
   }
 
   .post-card {
-    width: 25%;
+    /* width: 25%; */
     min-width: 300px;
   }
 
@@ -163,7 +122,7 @@
 
   @media screen and (max-width:899px) {
     .post-card {
-      width: 50%;
+      /* width: 50%; */
     }
   }
 
