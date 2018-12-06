@@ -3,7 +3,6 @@
     <SideBar :links="links"/>
     <div class="content-wrapper">
       <AdminHeader />
-      <div>aaaa</div>
     </div>
   </div>
 </template>
@@ -23,6 +22,7 @@
           { name: "Dashbord", path: "/admin" },
           { name: "NewPost", path: "/admin/newpost" },
           { name: "AllPosts", path: "/admin/allposts" },
+          { name: "Back To Top", path: "/" },
         ]
       }
     }
