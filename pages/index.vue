@@ -5,9 +5,14 @@
         <h1>バグ。。。時々涙目</h1>
       </div>
       <!-- <img src="/logo_transparent.png" alt="Tatsuya_Ichikawa"/> -->
-      <transition name="fade">
-        <nuxt-link to="/profile" class="profile">profile</nuxt-link>
-      </transition>
+      <div class="admin-profile">
+        <transition name="fade">
+          <nuxt-link to="/users/shofukuda" class="profile">shofukuda</nuxt-link>
+        </transition>
+        <transition name="fade">
+          <nuxt-link to="/users/tatsuyaichikawa" class="profile">tatsuyaichikawa</nuxt-link>
+        </transition>
+      </div>
     </div>
     <div class="cards-wrapper">
       <PostCard :post="post" v-for="post in posts" :key=post.id class="post-card"/>
@@ -55,7 +60,7 @@
     position: relative;
     margin: 0 auto;
     width: 100%;
-    background-image: url('/bug.png');
+    background-image: url('/bug2.png');
     background-size: contain;
     background-position: center;
     height: 100%;
@@ -71,23 +76,28 @@
     padding-left: 20px;
   }
 
+  .admin-profile {
+    display: flex;
+    justify-content: center;
+  }
+
   .profile {
     display: block;
-    border: 4px solid #1F7392;
+    border: 4px solid #0E8787;
     background-color: #ffffff;
     font-size: 24px;
-    width: 200px;
-    margin: 0 auto 50px;
+    width: 300px;
+    margin: 50px 50px;
     padding: 10px;
     letter-spacing: 1px;
     font-weight: 600;
     text-align: center;
-    color: #1F7392;
+    color: #0E8787;
     transition: .4s;
   }
 
   .profile:hover {
-    background: #1F7392;
+    background: #0E8787;
     color: white;
   }
 
@@ -100,7 +110,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 110px;
+    margin-top: 200px;
   }
 
   img {
@@ -114,15 +124,25 @@
     min-width: 300px;
   }
 
-  @media screen and (max-width:680px) {
-    img {
-      width: 100%;
+  @media screen and (max-width:1048px) {
+    .admin-profile {
+      margin-top: -50px;
     }
   }
 
-  @media screen and (max-width:899px) {
-    .post-card {
-      /* width: 50%; */
+  @media screen and (max-width:680px) {
+    .logo {
+      height: 300px;
+    }
+    img {
+      width: 100%;
+    }
+    .admin-profile {
+      display: block;
+      margin: 0 auto;
+    }
+    .profile {
+      margin: 0 auto 20px;
     }
   }
 

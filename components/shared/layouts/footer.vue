@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <small>© 2018 tatsuya ichikawa</small>
+    <small>© 2018 shofukuda tatsuyaichikawa</small>
   </footer>
 </template>
 
