@@ -1,22 +1,17 @@
 <template>
   <div class="wrapper">
-    <div class="logo">
-      <div class="first-view">
-        <h1>バグ。。。時々涙目</h1>
-      </div>
-      <!-- <img src="/logo_transparent.png" alt="Tatsuya_Ichikawa"/> -->
-      <div class="admin-profile">
-        <transition name="fade">
-          <nuxt-link to="/users/shofukuda" class="profile">shofukuda</nuxt-link>
-        </transition>
-        <transition name="fade">
-          <nuxt-link to="/users/tatsuyaichikawa" class="profile">tatsuyaichikawa</nuxt-link>
-        </transition>
-      </div>
+    <div class="first-view">
+      <div class="first-view-img"></div>
+      <Header class="header" />
+      <h1>TatsuyaIchikawa<br>engeering blog</h1>
+      <GlobalNav class="grobal-nav"/>
+
     </div>
-    <div class="cards-wrapper">
-      <PostCard :post="post" v-for="post in posts" :key=post.id class="post-card"/>
-    </div>
+    <section class="left-colomun">
+      <div class="cards-wrapper">
+        <PostCard :post="post" v-for="post in posts" :key=post.id class="post-card"/>
+      </div>
+    </section>
     <Footer />
   </div>
 </template>
@@ -24,11 +19,15 @@
 <script>
   import PostCard from "~/components/postCard.vue";
   import Footer from '~/components/shared/layouts/footer.vue'
+  import Header from '~/components/shared/layouts/header.vue'
+  import GlobalNav from '~/components/shared/layouts/globalnav.vue'
 
   export default {
     components: {
       PostCard,
       Footer,
+      Header,
+      GlobalNav,
     },
     data () {
       return {
@@ -53,29 +52,42 @@
     background-color: #F9F9F9;
   }
 
-  .logo {
-    height: 500px;
-    margin: 0 auto 50px;
-  }
-
   .first-view {
     position: relative;
+    width: 100%;
+    height: 500px;
+    background-color:  rgba(0, 210, 210, .9);
+  }
+
+  .header {
+    position: absolute;
+  }
+
+  .first-view-img {
+    position: absolute;
     margin: 0 auto;
     width: 100%;
-    background-image: url('/bug2.png');
-    background-size: contain;
+    background-image: url('/43624947930_bc5ede0e54_o.jpg');
+    opacity: 0.3;
+    background-size: cover;
     background-position: center;
     height: 100%;
   }
 
   h1 {
     position: absolute;
-    top: 320px;
-    text-align: left;
-    font-size: 0;
-    margin-left: 50px;
+    top: 220px;
     width: 100%;
-    padding-left: 20px;
+    text-align: center;
+    line-height: 2;
+    font-weight: 800;
+    font-size: 35px;
+    color: #FFFFFF;
+  }
+
+  .grobal-nav {
+    position: absolute;
+    bottom: 40px;
   }
 
   .admin-profile {
@@ -112,7 +124,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 200px;
+    /* margin-top: 200px; */
   }
 
   img {
@@ -148,8 +160,8 @@
     }
   }
 
-    .page-enter-active, .page-leave-active {
-  transition: opacity .5s;
+  .page-enter-active, .page-leave-active {
+    transition: opacity .5s;
   }
 
   .page-enter, .page-leave-to {
